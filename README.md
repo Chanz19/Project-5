@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Book Record Managent System:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Routes and EndPoints
 
-## Available Scripts
+### /users
 
-In the project directory, you can run:
+POST: Create a new user
+GET: Get all the list of users
 
-### `npm start`
+### /users/{id}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+GET: Get a user by Id
+PUT: Update a user by their ID
+DELETE: Delete a user by id (chk if he/she still has an issued book && is there any fine to be paid)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### /users/subscription-details/{id}
 
-### `npm test`
+GET: Get user subscription details >> Date of subscription >> Valid till >> Fine if any
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### /books
 
-### `npm run build`
+GET: Get all books
+POST: Create/Add a New book
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### /books/{id}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+GET: Get a book by id
+PUT: Update a book by its id
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### /books/issued
 
-### `npm run eject`
+GET: Get all issued books
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### /books/issued/withFine
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+GET: Get all issued books with fine
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Subscription Type:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    >> Basic (3 months)
+    >> Standard (6 months)
+    >> Premium (12 months)
 
-## Learn More
+# Cmds:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    >> npm init
+    >> npm i express
+    >> npm i nodemon --save-dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    >> npm run dev
 
-### Code Splitting
+## MongoDb:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    (Non - Relational DB)
 
-### Analyzing the Bundle Size
+## Cmds DB:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    npm i mongoose
+    npm install mongodb
 
-### Making a Progressive Web App
+mongodb+srv://rohankinnal:ghGx6SNCbWxdQemp@cluster0.jsgpglg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm i dotenv
 
-### Advanced Configuration
+## MVC Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    >> M: Model (Structure of mongodb collection)
+    >> V: View (Frontend-reactJs)
+    >> C: Controller (Brain or logic of a route)
